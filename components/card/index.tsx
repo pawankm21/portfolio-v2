@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function Card() {
   return (
-    <div>Card</div>
+    <div className='p-2 rounded-2xl bg-FireOpal shadow '></div>
   )
 }
