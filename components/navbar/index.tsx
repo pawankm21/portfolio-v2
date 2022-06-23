@@ -3,27 +3,54 @@ import MenuButton from "./menu";
 import LinkedinIcon from "../icons/linkedin-icon";
 import GithubIcon from "../icons/github-icon";
 import LeetcodeIcon from "../icons/leetcode-icon";
+import { motion } from "framer-motion";
+import { useState } from "react";
 export default function Navbar() {
+
+  const [active, setActive] = useState<number>(0);
+  const links = [
+    {
+      link: "/",
+      name: "home",
+    },
+    {
+      link: "/projects",
+      name: "projects",
+    },
+    {
+      link: "/blogs",
+      name: "blogs"
+    }
+  ]
   return (
-    <div className="relative w-full rounded-b flex px-16 py-8 justify-between  place-items-end    ">
+    <div className=" w-full bg-blend-saturation z-10 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end ">
+      <h1 className="text-xl font-bold font-Atma text-white">Pawan <span className="text-red-600 font-bold text-4xl">.</span> </h1>
 
-      <h1 className="text-2xl font-bold">Pawan<span className="text-FireOpal font-bold text-4xl">.</span> </h1>
-      <div className="lg:flex gap-12 w-1/3 mt-2  justify-center place-content-end  hidden ">
-        <LinkedinIcon className="w-6 text-FireOpal h-6" />
-        <GithubIcon className="w-6 text-FireOpal h-6" />
-        <LeetcodeIcon className="w-6 text-FireOpal h-6" />
+      <div className="lg:flex gap-12 w-1/3 mt-2 ml-52  justify-center place-content-end  hidden ">
+        <LinkedinIcon className="w-6 text-red-500 h-6" />
+        <GithubIcon className="w-6 text-red-500 h-6" />
+        <LeetcodeIcon className="w-6 text-red-500 h-6" />
       </div>
 
-      <div className="lg:flex gap-2 justify-self-end hidden mt-2 text-DarkPurple ">
-        <Link href="/">home</Link>
-        <div>/</div>
-        <Link href="/">projects</Link>
-        <div>/</div>
-        <Link href="/">blogs</Link>
+      <div className="lg:flex gap-3 justify-self-end hidden  font-bold ">
+        {links.map((link, ind) => {
+          return (
+            <div className=" cursor-pointer " key={link.link}>
+              <Link href={link.link} >
+                <motion.a className="text-white"
+                  onClick={() => setActive(ind)} >{link.name}</motion.a>
+
+              </Link>
+              {ind === active ? (
+                <motion.div className="border border-red-400 rounded-full w-full bg-red-400" layoutId="underline" />
+              ) : null}
+            </div>
+          )
+        })}
       </div>
-      <div className="lg:hidden block">
-        <MenuButton  />
-      </div>
+
+      <MenuButton className={"lg:hidden"} />
+
     </div>
   );
 }

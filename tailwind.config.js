@@ -5,13 +5,12 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
-    colors: {
-      White: "#ffffff",
-      Bisque: "#ffe8d1",
-      DarkPurple: "#231123",
-      MiddlePurple: "#c98bb9",
-      FireOpal: "#e65f5c",
+    extend: {
+      fontFamily: {
+        Noto: ["Noto Serif", "serif"],
+        Atma: ["Atma", "cursive"],
+        OpenSans: ["Open Sans", "san-serif"],
+      },
     },
   },
   plugins: [],
