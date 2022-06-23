@@ -6,11 +6,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        Noto: ["Noto Serif", "serif"],
-        Atma: ["Atma", "cursive"],
-        OpenSans: ["Open Sans", "san-serif"],
-      },
+      
     },
   },
   plugins: [],

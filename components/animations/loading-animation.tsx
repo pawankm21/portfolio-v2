@@ -21,7 +21,7 @@ export default function LoadingAnimation() {
                 opacity: 0,
 
             }}
-            className="bg-[#1A1A1A] absolute top-0 left-0 -z-10"
+            className=" bg-neutral-900 absolute top-0 left-0 -z-10"
         ></motion.div>
     )
 }

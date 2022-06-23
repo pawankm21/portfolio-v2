@@ -4,10 +4,16 @@ import LinkedinIcon from "../icons/linkedin-icon";
 import GithubIcon from "../icons/github-icon";
 import LeetcodeIcon from "../icons/leetcode-icon";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 export default function Navbar() {
+  const router = useRouter();
 
-  const [active, setActive] = useState<number>(0);
+  const [active, setActive] = useState<string>("/");
+  useEffect(() => {
+    setActive(router.pathname);
+    console.log("update");
+  })
   const links = [
     {
       link: "/",
@@ -24,9 +30,9 @@ export default function Navbar() {
   ]
   return (
     <div className=" w-full bg-blend-saturation z-10 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end ">
-      <h1 className="text-xl font-bold font-Atma text-white">Pawan <span className="text-red-600 font-bold text-4xl">.</span> </h1>
+      <h1 className="text-xl font-bold text-white">Pawan <span className="text-red-600 font-bold text-4xl">.</span> </h1>
 
-      <div className="lg:flex gap-12 w-1/3 mt-2 ml-52  justify-center place-content-end  hidden ">
+      <div className="lg:flex gap-12 w-1/3 mt-2 ml-24  justify-center place-content-end  hidden ">
         <LinkedinIcon className="w-6 text-red-500 h-6" />
         <GithubIcon className="w-6 text-red-500 h-6" />
         <LeetcodeIcon className="w-6 text-red-500 h-6" />
@@ -38,10 +44,10 @@ export default function Navbar() {
             <div className=" cursor-pointer " key={link.link}>
               <Link href={link.link} >
                 <motion.a className="text-white"
-                  onClick={() => setActive(ind)} >{link.name}</motion.a>
+                >{link.name}</motion.a>
 
               </Link>
-              {ind === active ? (
+              {link.link === active ? (
                 <motion.div className="border border-red-400 rounded-full w-full bg-red-400" layoutId="underline" />
               ) : null}
             </div>
@@ -49,7 +55,7 @@ export default function Navbar() {
         })}
       </div>
 
-      <MenuButton className={"lg:hidden"} />
+      <MenuButton className={"lg:hidden"} links={links} active={active} />
 
     </div>
   );

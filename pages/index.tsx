@@ -18,10 +18,8 @@ const Home: NextPage = () => {
     }
   }
   return (
-    <div className="w-full h-[100vh] ">
-      <Canvas>
-      <SphereAnimation/>
-      </Canvas>
+    <div className="w-full h-full">
+      <div className="w-full h-full"></div>
     </div>);
 };
 

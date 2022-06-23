@@ -20,11 +20,11 @@ export function BaseLayout({ children }: Props) {
       initial={{
         opacity: 0,
       }}
-      className={`${style.layout}`}>
+      className={`${style.layout} bg-neutral-900`}>
         <LoadingAnimation/>
       <Navbar />
       <div className={`${style.main} bg-inherit `}>{children}</div>
-     
+     <Footer/>
     </motion.div>
         </>
   );
