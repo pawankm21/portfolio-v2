@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar";
-import SlantIcon from "../components/icons/slant-icon";
+
 import Footer from "../components/footer";
 import { motion } from "framer-motion";
 import style from "./Layout.module.css";
