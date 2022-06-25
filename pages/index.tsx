@@ -1,6 +1,5 @@
 import { Canvas } from "@react-three/fiber";
 import type { NextPage } from "next";
-import CircleAnimation from "../components/animations/circle-animation";
 import SphereAnimation from "../components/animations/sphere-animation";
 const Home: NextPage = () => {
   const textVariant = {
@@ -9,18 +8,22 @@ const Home: NextPage = () => {
       y: [-1000, 0],
       transition: {
         duration: 2,
-        ease: "easeInOut"
-      }
+        ease: "easeInOut",
+      },
     },
     initial: {
       opacity: 0,
       y: -1000,
-    }
-  }
+    },
+  };
   return (
-    <div className="w-full h-full">
-      <div className="w-full h-full"></div>
-    </div>);
+    <div className="w-full h-full text-white">
+
+      {/* <Canvas className="w-full h-full">
+        <SphereAnimation />
+      </Canvas> */}
+    </div>
+  );
 };
 
 export default Home;

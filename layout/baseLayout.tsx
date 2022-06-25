@@ -18,7 +18,7 @@ export function BaseLayout({ children }: Props) {
 
           opacity: 1,
           transition: {
-            duration: 1,
+            duration: 0.5,
             ease: "easeInOut",
           },
         }}
@@ -30,7 +30,7 @@ export function BaseLayout({ children }: Props) {
         className={`${style.layout} bg-neutral-900`}
       >
         <Navbar />
-        <div className={`${style.main} bg-inherit `}>{children}</div>
+        <div className={`${style.main}  `}>{children}</div>
         <Footer />
       </motion.div>
     </>

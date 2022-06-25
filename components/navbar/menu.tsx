@@ -63,7 +63,7 @@ export default function MenuButton({
   const unitWidth = (unitHeight * (width as number)) / (height as number);
 
   return (
-    <div className="absolute right-16 ">
+    <div className="absolute right-16 lg:hidden z-50">
       <motion.svg
         viewBox={`0 0 ${unitWidth} ${unitHeight}`}
         overflow="visible"
@@ -101,20 +101,24 @@ export default function MenuButton({
         />
       </motion.svg>
       <motion.div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } absolute bg-black rounded  text-gray-300 text-sm border border-neutral-700 -left-16 w-28 overflow-hidden grid gap-2 py-4 px-2`}
+        animate={{
+          opacity: isOpen ? 1 : 0,
+          width: isOpen ? "8rem" : "0rem",
+          height: isOpen ? "fit-content" : "0rem",
+          padding: isOpen ? "1rem 0.5rem" : "0rem",
+        }}
+        className={`absolute bg-black rounded  text-gray-300 text-sm border border-neutral-700 -left-16  overflow-hidden grid gap-2`}
       >
         {props.links.map((link: any, ind: number) => {
           return (
             <div
               key={link}
               className={` px-3 my-0.5
-          hover:bg-neutral-800 py-0.5 hover:text-white rounded   ${
-            props.active === link.link
-              ? "bg-neutral-200 text-neutral-900"
-              : null
-          }`}
+           py-0.5  rounded cursor-pointer  ${
+             props.active === link.link
+               ? "bg-neutral-200 text-neutral-900"
+               : "hover:bg-neutral-800 hover:text-white"
+           }`}
             >
               <Link href={link.link}>{link.name}</Link>
             </div>

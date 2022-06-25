@@ -6,6 +6,7 @@ import LeetcodeIcon from "../icons/leetcode-icon";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { delayVariant } from "../../utils/utils";
 export default function Navbar() {
   const router = useRouter();
 
@@ -13,7 +14,7 @@ export default function Navbar() {
   useEffect(() => {
     setActive(router.pathname);
     console.log("update");
-  })
+  }, [router]);
   const links = [
     {
       link: "/",
@@ -25,12 +26,19 @@ export default function Navbar() {
     },
     {
       link: "/blogs",
-      name: "blogs"
-    }
-  ]
+      name: "blogs",
+    },
+  ];
   return (
-    <div className=" w-full bg-blend-saturation z-10 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end ">
-      <h1 className="text-xl font-bold text-white">Pawan <span className="text-red-600 font-bold text-4xl">.</span> </h1>
+    <motion.div
+      variants={delayVariant}
+      initial="initial"
+      animate="animate"
+      className=" w-full bg-blend-saturation z-10 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end "
+    >
+      <h1 className="text-xl font-bold text-white">
+        Pawan <span className="text-red-600 font-bold text-4xl">.</span>{" "}
+      </h1>
 
       <div className="lg:flex gap-12 w-1/3 mt-2 ml-24  justify-center place-content-end  hidden ">
         <LinkedinIcon className="w-6 text-red-500 h-6" />
@@ -42,21 +50,21 @@ export default function Navbar() {
         {links.map((link, ind) => {
           return (
             <div className=" cursor-pointer " key={link.link}>
-              <Link href={link.link} >
-                <motion.a className="text-white"
-                >{link.name}</motion.a>
-
+              <Link href={link.link}>
+                <motion.a className="text-white">{link.name}</motion.a>
               </Link>
               {link.link === active ? (
-                <motion.div className="border border-red-400 rounded-full w-full bg-red-400" layoutId="underline" />
+                <motion.div
+                  className="border border-red-400 rounded-full w-full bg-red-400"
+                  layoutId="underline"
+                />
               ) : null}
             </div>
-          )
+          );
         })}
       </div>
 
-      <MenuButton className={"lg:hidden"} links={links} active={active} />
-
-    </div>
+      <MenuButton links={links} active={active} />
+    </motion.div>
   );
 }
