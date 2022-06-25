@@ -112,7 +112,7 @@ export default function MenuButton({
         {props.links.map((link: any, ind: number) => {
           return (
             <div
-              key={link}
+              key={link.link}
               className={` px-3 my-0.5
            py-0.5  rounded cursor-pointer  ${
              props.active === link.link

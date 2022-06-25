@@ -20,8 +20,8 @@ const CameraController = () => {
 
 export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
   const meshRef = useRef<THREE.Mesh>(null!);
-  
-  useFrame((state, delta) => (meshRef.current.rotateY(delta * 0.1)));
+
+  useFrame((state, delta) => meshRef.current.rotateY(delta * 0.1));
   return (
     <>
       <motion.scene>
@@ -39,10 +39,9 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
             metalness={0.9}
             clearcoat={1}
             clearcoatRoughness={0.1}
-                      roughness={0.5}
-                      color={0x8418ca}
-                    //   normalMap={texture}
-                  
+            roughness={0.5}
+            color={0x8418ca}
+            //   normalMap={texture}
           />
         </motion.mesh>
       </motion.scene>
