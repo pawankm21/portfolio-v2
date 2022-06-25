@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, Transition, SVGMotionProps } from "framer-motion";
-import Link from 'next/link';
+import Link from "next/link";
 import { linkSync } from "fs";
 interface Props extends SVGMotionProps<SVGSVGElement> {
   isOpen?: boolean;
@@ -10,7 +10,6 @@ interface Props extends SVGMotionProps<SVGSVGElement> {
   lineProps?: any;
   active?: any;
   links?: any;
-  
 }
 
 export default function MenuButton({
@@ -74,8 +73,7 @@ export default function MenuButton({
         {...props}
         onClick={() => {
           setIsOpen(!isOpen);
-        }
-        }
+        }}
       >
         <motion.line
           x1="0"
@@ -102,13 +100,25 @@ export default function MenuButton({
           {...lineProps}
         />
       </motion.svg>
-      <motion.div className={`${isOpen ? "block" : "hidden"} absolute bg-black rounded  text-gray-300 text-sm border border-neutral-700 -left-16 w-28 overflow-hidden grid gap-2 py-4 px-2`}>
+      <motion.div
+        className={`${
+          isOpen ? "block" : "hidden"
+        } absolute bg-black rounded  text-gray-300 text-sm border border-neutral-700 -left-16 w-28 overflow-hidden grid gap-2 py-4 px-2`}
+      >
         {props.links.map((link: any, ind: number) => {
-          return <div className={` px-3 my-0.5
-          hover:bg-neutral-800 py-0.5 hover:text-white rounded   ${props.active === link.link ? "bg-neutral-200 text-neutral-900" : null}`}>
-
-            <Link href={link.link}>{link.name}</Link>
-          </div>
+          return (
+            <div
+              key={link}
+              className={` px-3 my-0.5
+          hover:bg-neutral-800 py-0.5 hover:text-white rounded   ${
+            props.active === link.link
+              ? "bg-neutral-200 text-neutral-900"
+              : null
+          }`}
+            >
+              <Link href={link.link}>{link.name}</Link>
+            </div>
+          );
         })}
       </motion.div>
     </div>
