@@ -5,6 +5,7 @@ import type { NextPage } from "next";
 import { motion } from 'framer-motion';
 import styles from "../styles/styles.module.css"
 import SphereAnimation from "../components/animations/sphere-animation";
+import { initialVariant } from "../utils/utils";
 const Home: NextPage = () => {
   const textVariant = {
     animate: {
@@ -22,23 +23,9 @@ const Home: NextPage = () => {
   };
   return (
     <motion.div
-      animate={{
-        width: "100%",
-        height: "100%",
-        borderTopRightRadius: ["100%", "25%", "0%"],
-        borderBottomRightRadius: ["100%", "25%", "0%"],
-
-        opacity: 1,
-        transition: {
-          duration: 0.5,
-          ease: "easeInOut",
-        },
-      }}
-      initial={{
-        width: 0,
-        height: 0,
-        opacity: 0,
-      }}
+      variants={initialVariant}
+      initial="initial"
+      animate="animate"
       className={`${styles.layout} bg-neutral-900`}
     >
       <Navbar />
