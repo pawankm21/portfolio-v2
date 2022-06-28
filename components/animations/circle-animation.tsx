@@ -6,8 +6,8 @@ export default function CircleAnimation() {
             height:400,
         },
         animate1: {
-            translateX: [-100, 100, -100],
-            translateY: [100, 0, 100],
+            translateX: [-10, 10, -10],
+            translateY: [10, 0, 10],
             width: [400, 300, 400],
             height: [400, 300, 400],
              
@@ -19,8 +19,8 @@ export default function CircleAnimation() {
 
         },
         animate2: {
-            translateX: [100, -100, 100],
-            translateY: [0, 100, 0],
+            translateX: [10, -10, 10],
+            translateY: [0, 10, 0],
             width: [300, 400, 300],
             height: [300, 400, 300],
             transition: {
@@ -35,7 +35,7 @@ export default function CircleAnimation() {
     return (
         <motion.div
             animate={{
-                filter: "blur(24px)",
+                filter: "blur(44px)",
                 transition: {
                     duration: 1,
                     ease: "easeInOut",
@@ -45,7 +45,7 @@ export default function CircleAnimation() {
             }}
             className="w-full h-full flex justify-center relative z-10">
 
-            <motion.div variants={circleVariant} initial="initial" animate="animate1" className="opacity-75 rounded-full bg-purple-300 absolute  mix-blend-multiply "></motion.div> <motion.div initial="initial" variants={circleVariant} animate="animate2" className=" rounded-full bg-red-300 absolute  mix-blend-multiply  opacity-50 "></motion.div>
+            <motion.div variants={circleVariant} initial="initial" animate="animate1" className="opacity-75 rounded-full bg-red-400 absolute  mix-blend-multiply "></motion.div> <motion.div initial="initial" variants={circleVariant} animate="animate2" className=" rounded-full bg-blue-400 absolute  mix-blend-multiply  opacity-50 "></motion.div>
 
         </motion.div>
     )

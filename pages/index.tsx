@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import styles from "../styles/styles.module.css"
 import SphereAnimation from "../components/animations/sphere-animation";
 import { initialVariant } from "../utils/utils";
+import CircleAnimation from "../components/animations/circle-animation";
 const Home: NextPage = () => {
   const textVariant = {
     animate: {
@@ -30,9 +31,18 @@ const Home: NextPage = () => {
     >
       <Navbar />
       <div className={`${styles.main}  `}>
-        <Canvas>
+    
+        <motion.div className="text-white px-12 py-8 absolute text-center w-full top-36" id="intro">
+          <h1 className="text-8xl font-extrabold">Pawan Mishra</h1>
+          <p className="font-bold p-2 ">Web developer.</p>
+        </motion.div>
+        <Canvas className=" mix-blend-difference" >
           <SphereAnimation />
         </Canvas>
+     
+      </div>
+      <div className={styles.main}>
+        
       </div>
       <Footer />
     </motion.div>

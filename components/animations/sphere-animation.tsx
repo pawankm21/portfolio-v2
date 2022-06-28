@@ -1,53 +1,51 @@
 //@ts-nocheck
 import * as THREE from "three";
-import { Suspense, useRef, useState, useEffect } from "react";
-import { useFrame, useThree, useLoader } from "@react-three/fiber";
+import { Suspense, useRef, useState } from "react";
+import { useFrame,  useLoader } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { FlakesTexture } from "three/examples/jsm/textures/FlakesTexture";
 
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(() => {
-    const controls = new OrbitControls(camera, gl.domElement);
-    controls.minDistance = 4;
-    controls.maxDistance = 30;
-    return () => {
-      controls.dispose();
-    };
-  }, [gl, camera]);
-  return null;
-};
+
+
 
 export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
   const meshRef = useRef<THREE.Mesh>(null!);
   const texture = useLoader(THREE.TextureLoader, "/textures/golf.png")
-  useFrame((state, delta) => {
-    meshRef.current.rotation.y += 0.01;
-    // meshRef.current.rotation.x += 0.001;
-  })
+  useFrame(() => (meshRef.current.rotation.y += 0.01));
 
+  function pointerMove(e) {
+    const mouseX = (e.clientX - window.innerWidth / 2);
+    const mouseY = (e.clientY - window.innerHeight / 2);
+    meshRef.current.rotation.y += 0.0001*(mouseX - meshRef.current.rotation.y);
+    meshRef.current.rotation.x += 0.0001 * (mouseY - meshRef.current.rotation.x);
+    meshRef.current.position.z =  0.0005 * (mouseX - meshRef.current.rotation.y);
+
+  }
   return (
     <Suspense fallback={null}>
-      <motion.scene>
-        <CameraController />
+      <motion.scene
+        ref={meshRef}
+        onPointerMove={pointerMove}
+
+      >
+
         <motion.perspectiveCamera aspect={1} position={[0, 0, 10]} />
         <motion.pointLight
-          position={[10, 2, 1]}
+          position={[20, -10, 10]}
           color={0xEF4444}
-          intensity={2}
+          intensity={1}
         />
         <motion.pointLight
-          position={[-10, 1, 1]}
+          position={[-20, 10, -10]}
           color={"blue"}
-          intensity={2}
+          intensity={1}
         />
+
+        <motion.mesh
         
-        <motion.mesh ref={meshRef}
         >
-          <motion.sphereGeometry args={[2, 64, 64]}
+          <motion.sphereGeometry args={[2.5, 64, 64]}
           />
-         
+
           <motion.meshPhysicalMaterial
             metalness={0.9}
             // clearcoat={1}
@@ -57,7 +55,7 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
             normalMap={texture}
           />
         </motion.mesh>
- 
+
       </motion.scene>
     </Suspense>
   );
