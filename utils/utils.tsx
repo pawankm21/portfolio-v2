@@ -16,9 +16,9 @@ export const sectionVariant = {
 
   whileInView: {
     opacity: 1,
-    translateY: -20,
+    translateY: [0,-20],
     transition: {
-      delay: 0.5,
+      delay: 0.3,
     }
   }
 }

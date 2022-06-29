@@ -6,13 +6,12 @@ import React from "react"
 export default function BaseLayout({ children }: { children: React.ReactNode }) {
     return (
         <motion.div
-
             className={`${styles.layout} bg-neutral-900`}
         >
             <Navbar />
-            <div className={`${styles.main}`}>
+            <main className={`${styles.main}`}>
                 {children}
-            </div>
+            </main>
             <Footer />
         </motion.div>
     )

@@ -56,7 +56,20 @@ const Home: NextPage = () => {
           </motion.div>
         </div>
       </section>
+      <section className="w-full h-full">
+        <div className={`relative mt-24`} id="skills">
+          <motion.div
+            className="w-full absolute h-full  bg-red-500 z-0"></motion.div>
+          <motion.div
+            variants={sectionVariant}
+            whileInView="whileInView"
+            initial="initial"
+            className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 text-center bg-neutral-800">
 
+            <h1 className="text-5xl font-bold">Skills</h1>
+          </motion.div>
+        </div>
+      </section>
     </motion.div>
 
   );
