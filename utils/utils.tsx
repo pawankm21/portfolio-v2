@@ -12,13 +12,14 @@ export const delayVariant = {
 export const sectionVariant = {
   initial: {
     opacity: 0,
+    scaleX: 0.8,
+    scaleY: 0.8,
   },
 
   whileInView: {
     opacity: 1,
-    translateY: [0,-20],
-    transition: {
-      delay: 0.3,
-    }
+    scaleX: 1,
+    scaleY: 1,
+    translateY: -20,
   }
 }

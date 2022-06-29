@@ -11,7 +11,15 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
   const meshRef = useRef<THREE.Mesh>(null!);
   const texture = useLoader(THREE.TextureLoader, "/textures/golf.png")
   useFrame(() => (meshRef.current.rotation.y += 0.01));
-
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 2,
+        delay:0.5,
+    }},
+  }
   function pointerMove(e) {
     const mouseX = (e.clientX - window.innerWidth / 2);
     const mouseY = (e.clientY - window.innerHeight / 2);
@@ -41,7 +49,7 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
         />
 
         <motion.mesh
-        
+       
         >
           <motion.sphereGeometry args={[2.5, 64, 64]}
           />
@@ -53,6 +61,9 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
             roughness={0.5}
             color={"#f0f0f0"}
             normalMap={texture}
+            initial="hidden"
+            animate="visible"
+            variants={variants}
           />
         </motion.mesh>
 
