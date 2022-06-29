@@ -56,7 +56,7 @@ export default function Navbar() {
               {link.link === active ? (
                 <motion.div
                   className="border border-red-400 rounded-full w-full bg-red-400"
-                  layoutId="underline"
+                  layoutId="underline-link"
                 />
               ) : null}
             </div>

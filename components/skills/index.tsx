@@ -19,7 +19,7 @@ export default function Skill({ name, image, color,className }: SkillProps) {
                     color: "white",
                 }}
                 className={` ${className} p-4 text-neutral-400
-                 bg-neutral-900 flex place-items-center justify-center w-full   h-full`}>
+                 bg-neutral-900 grid grid-col-2 place-items-center justify-center w-full   h-full`}>
                 <Image src={"/icons/" + image} layout="fixed" width={36} height={36} alt={name}
                 objectFit="contain"
                 />
