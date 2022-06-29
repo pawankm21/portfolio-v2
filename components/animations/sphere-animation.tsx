@@ -15,9 +15,9 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
   function pointerMove(e) {
     const mouseX = (e.clientX - window.innerWidth / 2);
     const mouseY = (e.clientY - window.innerHeight / 2);
-    meshRef.current.rotation.y += 0.0001*(mouseX - meshRef.current.rotation.y);
-    meshRef.current.rotation.x += 0.0001 * (mouseY - meshRef.current.rotation.x);
-    meshRef.current.position.z =  0.0005 * (mouseX - meshRef.current.rotation.y);
+    meshRef.current.rotation.y += 0.0002*(mouseX - meshRef.current.rotation.y);
+    meshRef.current.rotation.x += 0.0002 * (mouseY - meshRef.current.rotation.x);
+    meshRef.current.position.z =  0.001 * (mouseX - meshRef.current.rotation.y);
 
   }
   return (

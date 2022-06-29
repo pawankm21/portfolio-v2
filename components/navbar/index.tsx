@@ -34,7 +34,7 @@ export default function Navbar() {
       variants={delayVariant}
       initial="initial"
       animate="animate"
-      className=" w-full  bg-neutral-900   sticky top-0 z-10 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end "
+      className=" w-full  bg-neutral-900   sticky top-0 z-50 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end "
     >
       <h1 className="text-xl font-bold text-white">
         Pawan <span className="text-red-600 font-bold text-4xl">.</span>{" "}
