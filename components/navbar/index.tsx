@@ -6,7 +6,8 @@ import LeetcodeIcon from "../icons/leetcode-icon";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { delayVariant } from "../../utils/utils";
+import { delay } from "../../utils/utils";
+import Tabs from "../tabs";
 export default function Navbar() {
   const router = useRouter();
 
@@ -31,7 +32,7 @@ export default function Navbar() {
   ];
   return (
     <motion.div
-      variants={delayVariant}
+      variants={delay}
       initial="initial"
       animate="animate"
       className=" w-full  bg-neutral-900   sticky top-0 z-50 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end "
@@ -46,23 +47,9 @@ export default function Navbar() {
         <LeetcodeIcon className="w-6 text-red-500 h-6" />
       </div>
 
-      <div className="lg:flex gap-3 justify-self-end hidden  font-bold ">
-        {links.map((link, ind) => {
-          return (
-            <div className=" cursor-pointer " key={link.link}>
-              <Link href={link.link}>
-                <motion.a className="text-white">{link.name}</motion.a>
-              </Link>
-              {link.link === active ? (
-                <motion.div
-                  className="border border-red-400 rounded-full w-full bg-red-400"
-                  layoutId="underline-link"
-                />
-              ) : null}
-            </div>
-          );
-        })}
-      </div>
+      <motion.div className="lg:flex gap-3 justify-self-end hidden  font-bold ">
+        <Tabs links={links} active={active} />
+      </motion.div>
 
       <MenuButton links={links} active={active} />
     </motion.div>

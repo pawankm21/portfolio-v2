@@ -1,4 +1,6 @@
-export const delayVariant = {
+
+
+export const delay = {
   animate: {
     opacity: 1,
     transition: {
@@ -9,17 +11,23 @@ export const delayVariant = {
     opacity: 0,
   },
 };
-export const sectionVariant = {
+export const section = {
   initial: {
-    opacity: 0,
-    scaleX: 0.8,
-    scaleY: 0.8,
+scale:0.9,
   },
 
   whileInView: {
-    opacity: 1,
-    scaleX: 1,
-    scaleY: 1,
+  scale:1,
     translateY: -20,
+    transition: {
+      duration:0.2,
+    }
   }
 }
+export const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};

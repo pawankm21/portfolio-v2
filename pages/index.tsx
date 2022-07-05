@@ -3,20 +3,22 @@ import { Canvas } from "@react-three/fiber";
 import type { NextPage } from "next";
 import { motion } from 'framer-motion';
 import SphereAnimation from "../components/animations/sphere-animation";
-import { delayVariant, sectionVariant } from "../utils/utils";
+import { delay, section, item } from "../utils/utils";
 import CircleAnimation from "../components/animations/circle-animation";
 import Skill from "../components/skills";
 import { useRef } from 'react';
+import Carousel from '../components/carousel';
+
 const Home: NextPage = () => {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const contactRef = useRef(null);
-  const handleScroll = (ref:any ) => { 
-    ref.current.scrollIntoView({ behavior: 'smooth', block:"nearest" });
+  const handleScroll = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   return (
     <motion.div
-      variants={delayVariant}
+      variants={delay}
       animate="animate"
       initial="initial"
       className="w-full min-h-[100vh]"
@@ -36,11 +38,20 @@ const Home: NextPage = () => {
             <SphereAnimation />
           </Canvas>
         </motion.div>
+
+
         <motion.button
+          whileHover={{
+            translateY: -5,
+            translateX: 5,
+          }}
+
+
           onClick={() => handleScroll(aboutRef)}
           className="absolute text-white py-4 border bottom-6 border-neutral-400 px-6 lg:bottom-12 lg:left-6 left-4">
           Continue
         </motion.button>
+
       </section>
 
       <section className="w-full mt-32 " id="about-me"  >
@@ -48,7 +59,7 @@ const Home: NextPage = () => {
           <motion.div
             className="w-full absolute h-full bg-red-500 z-0" ref={aboutRef}></motion.div>
           <motion.div
-            variants={sectionVariant}
+            variants={section}
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200  bg-neutral-800">
@@ -72,25 +83,25 @@ const Home: NextPage = () => {
           </motion.div>
         </div>
       </section>
-      <section className="w-full h-full" ref={skillsRef} id="skills">
+      <section className="w-full mt-32" ref={skillsRef} id="skills">
         <div className={`relative mt-24`} >
           <motion.div
             className="w-full absolute h-full  bg-red-500 z-0"></motion.div>
           <motion.div
-            variants={sectionVariant}
+            variants={section}
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
 
             <h1 className="text-5xl font-bold px-8">Skills</h1>
-            <div className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 grid-cols-4   place-content-center">
+            <div className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
+              place-items-center ">
               <Skill name="HTML" image="html.png" color="#e34f26" />
               <Skill name="CSS" image="css.png" color="#264fe3" />
               <Skill name="JavaScript" image="javascript.png" color="#61dafb" />
               <Skill name="TypeScript" image="typescript.webp" color="#EE4266" />
               <Skill name="Python" image="python.png" color="#00A5E0" />
               <Skill name="C++/C" image="c++.png" color="#FFD23F" />
-
               <Skill name="React" image="react.png" color="#540D6E" />
               <Skill name="NodeJS" image="nodejs.png" color="#264fe3" />
               <Skill name="NextJS" image="nextjs.png" color="#F3FCF0" />
@@ -99,18 +110,39 @@ const Home: NextPage = () => {
               <Skill name="Flask" image="flask.png" color="#B1E5F2" />
               <Skill name="MongoDB" image="mongodb.png" color="#C98BB9" />
               <Skill name="PostgreSQL" image="postgresql.png" color="#F86624" />
-              <Skill name="Firebase" image="firebase.png" color="#6564DB" />
+              <Skill name="CI-CD" image="CI.png" color="#6564DB" />
               <Skill name="Git" image="git.png" color="#41E2BA" />
               <Skill name="Linux" image="linux.png" color="#DDFBD2" />
               <Skill name="Docker" image="docker.png" color="#f3e945" />
               <Skill name="GitHub" image="github.png" color="#77FF94" />
-              <Skill name="GraphQL" image="graphql.png" color="#264fe3" />
+              {/* <Skill name="GraphQL" image="graphql.png" color="#264fe3" /> */}
               <Skill name="Three.js" image="three.png" color="#e34f26" />
 
 
             </div>
           </motion.div>
         </div>
+      </section>
+      <section className="w-full mt-32" id="projects">
+        <div className={`relative mt-24`} >
+          <motion.div
+            className="w-full absolute   bg-red-500 z-0"></motion.div>
+          <motion.div
+            variants={section}
+            whileInView="whileInView"
+            initial="initial"
+            className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
+
+            <h1 className="text-5xl font-bold px-8 ">Projects</h1>
+            <motion.div
+              className="w-full absolute bg-red-500 z-0"></motion.div>
+            <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
+              <Carousel />
+            </div>
+
+          </motion.div>
+        </div>
+
       </section>
     </motion.div>
 

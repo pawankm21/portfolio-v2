@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { delayVariant } from "../../utils/utils";
+import { delay } from "../../utils/utils";
 import GithubIcon from "../icons/github-icon";
 import LinkedinIcon from "../icons/linkedin-icon";
 import MailIcon from "../icons/mail-icon";
@@ -7,7 +7,7 @@ import TwitterIcon from "../icons/twitter-icon";
 export default function Footer() {
   return (
     <motion.div
-      variants={delayVariant}
+      variants={delay}
       animate="animate"
       initial="initial"
       className="bg-zinc-800 h-20 flex place-items-center justify-center text-neutral-400 gap-4"
