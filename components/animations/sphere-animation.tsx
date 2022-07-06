@@ -1,13 +1,13 @@
 //@ts-nocheck
 import * as THREE from "three";
-import { Suspense, useRef, useState } from "react";
+import { memo, Suspense, useRef, useState } from "react";
 import { useFrame,  useLoader } from "@react-three/fiber";
 import { motion } from "framer-motion-3d";
 
 
 
 
-export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
+ function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
   const meshRef = useRef<THREE.Mesh>(null!);
   const texture = useLoader(THREE.TextureLoader, "/textures/golf.png")
   useFrame(() => (meshRef.current.rotation.y += 0.01));
@@ -71,3 +71,4 @@ export default function SphereAnimation(props: JSX.IntrinsicElements["mesh"]) {
     </Suspense>
   );
 }
+export default memo(SphereAnimation);

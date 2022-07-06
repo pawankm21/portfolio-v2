@@ -9,26 +9,12 @@ import { useRouter } from "next/router";
 import { delay } from "../../utils/utils";
 import Tabs from "../tabs";
 export default function Navbar() {
-  const router = useRouter();
 
-  const [active, setActive] = useState<string>("/");
-  useEffect(() => {
-    setActive(router.pathname);
-    console.log("update");
-  }, [router]);
   const links = [
-    {
-      link: "/",
-      name: "home",
-    },
-    {
-      link: "/projects",
-      name: "projects",
-    },
-    {
-      link: "/blogs",
-      name: "blogs",
-    },
+    "about",
+    "projects",
+    "blogs",
+    "contact",
   ];
   return (
     <motion.div
@@ -48,10 +34,10 @@ export default function Navbar() {
       </div>
 
       <motion.div className="lg:flex gap-3 justify-self-end hidden  font-bold ">
-        <Tabs links={links} active={active} />
+        <Tabs links={links}  />
       </motion.div>
 
-      <MenuButton links={links} active={active} />
+      <MenuButton links={links} />
     </motion.div>
   );
 }

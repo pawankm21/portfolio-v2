@@ -1,26 +1,21 @@
 import Link from "next/link";
-import {LayoutGroup, motion} from "framer-motion";
-export default function Tabs({links,active}:any) 
-{
-    
-    return <LayoutGroup >
+import { LayoutGroup, motion } from "framer-motion";
+export default function Tabs({ links, active }: any) {
 
-  {  links.map((link: any, ind: number) => {
-        return (
-            <motion.div className=" cursor-pointer "  key={link.link}>
-                    <Link href={link.link}>
-                        <motion.a className="text-white">{link.name}</motion.a>
-                    </Link>
-                    
-                <motion.div
-                    animate={{
-                        scale:link.link===active?1:0,
+    return <div className="flex gap-4 ">
+
+        {links.map((link: any, ind: number) => {
+            return (
+                <motion.button className="text-neutral-300"
+                    onClick={() => {
+                        const element = document.getElementById(link);
+                        element?.scrollIntoView({
+                            behavior: "smooth",
+                            block: "center",
+                        })
                     }}
-                    className={`border border-red-400 rounded-full w-full bg-red-400  `}
-                        />
-                   
-                </motion.div>
+                    key={link}>{link}</motion.button>
             );
         })}
-        </LayoutGroup>
-    }
+    </div>
+}

@@ -1,18 +1,22 @@
-import Link from 'next/link';
+import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
 import type { NextPage } from "next";
 import { motion } from 'framer-motion';
 import SphereAnimation from "../components/animations/sphere-animation";
-import { delay, section, item } from "../utils/utils";
+import { delay, section } from "../utils/utils";
+import Card from "../components/carousel/card";
 import CircleAnimation from "../components/animations/circle-animation";
 import Skill from "../components/skills";
+import skills from "../data/skills.json";
+import projects from "../data/projects.json";
+import blogs from "../data/blogs.json";
 import { useRef } from 'react';
 import Carousel from '../components/carousel';
+import Link from "next/link";
 
 const Home: NextPage = () => {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
-  const contactRef = useRef(null);
   const handleScroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
@@ -54,7 +58,7 @@ const Home: NextPage = () => {
 
       </section>
 
-      <section className="w-full mt-32 " id="about-me"  >
+      <section className="w-full mt-32 " id="about"  >
         <div className={`relative`} >
           <motion.div
             className="w-full absolute h-full bg-red-500 z-0" ref={aboutRef}></motion.div>
@@ -73,8 +77,17 @@ const Home: NextPage = () => {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptates, maiores officiis magni ea voluptate nisi obcaecati sint hic cum! Optio ab exercitationem officia libero sint aut, laudantium quas ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, obcaecati nihil minima libero possimus nemo earum cumque eveniet sapiente maxime ipsam ullam velit placeat sit. Aspernatur quis ipsam enim corporis?
               </div>
               <div className="lg:w-1/2 lg:block hidden">
-                <div className=" flex justify-center -z-10 h-full">
+                <div className=" flex justify-center -z-10 h-full relative">
                   <CircleAnimation />
+                  <div className="absolute">
+
+                    <Image src="/assets/me.png" width="280"
+                      style={{
+                        borderRadius: "100%",
+                      }}
+                      layout="fixed"
+                      objectFit="cover" height="200" alt="Me" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,37 +109,18 @@ const Home: NextPage = () => {
             <h1 className="text-5xl font-bold px-8">Skills</h1>
             <div className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
               place-items-center ">
-              <Skill name="HTML" image="html.png" color="#e34f26" />
-              <Skill name="CSS" image="css.png" color="#264fe3" />
-              <Skill name="JavaScript" image="javascript.png" color="#61dafb" />
-              <Skill name="TypeScript" image="typescript.webp" color="#EE4266" />
-              <Skill name="Python" image="python.png" color="#00A5E0" />
-              <Skill name="C++/C" image="c++.png" color="#FFD23F" />
-              <Skill name="React" image="react.png" color="#540D6E" />
-              <Skill name="NodeJS" image="nodejs.png" color="#264fe3" />
-              <Skill name="NextJS" image="nextjs.png" color="#F3FCF0" />
-              <Skill name="Tailwindcss" image="tailwindcss.png" color="#61dafb" />
-              <Skill name="Django" image="django.png" color="#E8E9F3" />
-              <Skill name="Flask" image="flask.png" color="#B1E5F2" />
-              <Skill name="MongoDB" image="mongodb.png" color="#C98BB9" />
-              <Skill name="PostgreSQL" image="postgresql.png" color="#F86624" />
-              <Skill name="CI-CD" image="CI.png" color="#6564DB" />
-              <Skill name="Git" image="git.png" color="#41E2BA" />
-              <Skill name="Linux" image="linux.png" color="#DDFBD2" />
-              <Skill name="Docker" image="docker.png" color="#f3e945" />
-              <Skill name="GitHub" image="github.png" color="#77FF94" />
-              {/* <Skill name="GraphQL" image="graphql.png" color="#264fe3" /> */}
-              <Skill name="Three.js" image="three.png" color="#e34f26" />
-
+              {skills.map((skill: any) => {
+                return <Skill key={skill.name} {...skill} />
+              })}
 
             </div>
           </motion.div>
         </div>
       </section>
-      <section className="w-full mt-32" id="projects">
-        <div className={`relative mt-24`} >
+      <section className="w-full  mt-32" id="projects">
+        <div className={`relative mt-24 lg:h-[100vh]`} >
           <motion.div
-            className="w-full absolute   bg-red-500 z-0"></motion.div>
+            className="w-full h-full absolute   bg-red-500 z-0"></motion.div>
           <motion.div
             variants={section}
             whileInView="whileInView"
@@ -136,8 +130,34 @@ const Home: NextPage = () => {
             <h1 className="text-5xl font-bold px-8 ">Projects</h1>
             <motion.div
               className="w-full absolute bg-red-500 z-0"></motion.div>
-            <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
-              <Carousel />
+            <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[50vh] overflow-hidden flex justify-center  mx-auto relative">
+              <Carousel data={projects} />
+            </div>
+
+          </motion.div>
+        </div>
+
+      </section>
+      <section className="w-full  mt-32" id="blogs">
+        <div className={`relative mt-24 lg:h-[100vh]`} >
+          <motion.div
+            className="w-full h-full absolute   bg-red-500 z-0"></motion.div>
+          <motion.div
+            variants={section}
+            whileInView="whileInView"
+            initial="initial"
+            className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
+
+            <h1 className="text-5xl font-bold px-8 ">Blogs</h1>
+            <motion.div
+              className="w-full absolute bg-red-500 z-0"></motion.div>
+            <div className="m-6 p-10 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow transition duration-300 relative grid gap-4 lg:grid-cols-2">
+              {blogs.map((blog: any) => (
+                <div key={blog.name} className="hover:shadow hover:shadow-red-500 shadow-lg p-2 bg-black rounded-lg">
+                  <Card  {...blog} />
+       
+                </div>
+              ))}
             </div>
 
           </motion.div>

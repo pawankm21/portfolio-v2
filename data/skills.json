@@ -1,0 +1,89 @@
+[
+    {
+        "name":"HTML",
+        "image":"html.png",
+        "color":"#e34f26"
+    },
+    {
+        "name":"CSS",
+        "image":"css.png",
+        "color":"#264fe3"
+    },
+    {
+        "name":"JavaScript",
+        "image":"javascript.png",
+        "color":"#61dafb"
+    }
+    ,
+    {
+        "name":"TypeScript",
+        "image":"typescript.webp",
+        "color":"#EE4266"
+    },
+    {
+        "name":"Python",
+        "image":"python.png",
+        "color":"#00A5E0"
+    },
+
+    {
+        "name":"C++",
+        "image":"c++.png",
+        "color":""
+    },
+    {
+        "name":"React",
+        "image":"react.png",
+        "color":"#540D6E"
+    },
+    {
+        "name":"Node.js",
+        "image":"nodejs.png",
+        "color":"#264fe3"
+    },
+    {
+        "name":"Nextjs",
+        "image":"nextjs.png",
+        "color":"#F3FCF0"
+    }
+ ,
+ {
+    "name":"Tailwind CSS",
+    "image":"tailwindcss.png",
+    "color":"#61dafb"
+ },
+ {
+     "name":"Django" ,"image":"django.png" ,"color":"#E8E9F3"
+ },
+ {
+ "name":"Flask" ,"image":"flask.png" ,"color":"#B1E5F2"
+ },
+    {
+        "name":"MongoDB",
+        "image":"mongodb.png",
+        "color":"#00A5E0"
+    },
+    {
+        "name":"PostgreSQL",
+        "image":"postgresql.png",
+        "color":"#00A5E0"
+    },
+    {
+         "name":"CI-CD", "image":"CI.png" ,"color":"#6564DB" 
+    },
+    {
+        "name":"Git", "image":"git.png" ,"color":"#41E2BA"
+    },
+    {
+         "name":"Linux", "image":"linux.png", "color":"#DDFBD2"
+    },
+    {
+        "name":"Docker", "image":"docker.png", "color":"#f3e945"
+    },
+    {
+        "name":"GitHub", "image":"github.png" ,"color":"#77FF94"
+    },{
+         "name":"Three.js", "image":"three.png", "color":"#e34f26"
+    }
+    
+]

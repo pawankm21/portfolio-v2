@@ -1,27 +1,32 @@
 [
   {
-    "name": "project_name2",
-    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    "name": "Collegium",
+    "description": "An event reminder dashboard application for college events. Users can register, view, create events.",
+    "image": "/projects/collegium1.png"
   },
   {
-    "name": "project_name3",
-    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    "name": "IIIT-Bh Placement Website",
+    "description": "Official website for IIIT-Bh Placement Cell.",
+    "image": "/projects/placement-website.jpg"
   },
   {
-    "name": "project_name4",
-    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    "name": "Antinormie Discord Bot",
+    "description": "A Discord bot for the Antinormie Discord server. Can give random Leetcode questions, provide upcoming contest information, create problem rooms in binarysearch.com and more.",
+    "image": "/projects/antinormie.png"
   },
   {
-    "name": "project_name5",
-    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    "name": "SpaceBar",
+    "description": "Oh no! Pacman has attacked! As the ships Captain, you must stop Pacman's beam of words from destroying your ship by your typing skills. Let's see how fast you can roll those fingers!",
+    "image": "/projects/spacebar.jpg"
   },
   {
-    "name": "project_name6",
-    "description": "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-    "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    "name": "Social Media UI",
+    "description": "A social media UI for the user to interact with the social media platform.",
+    "image": "/projects/social.png"
+  },
+  {
+    "name": "Old Portfolio Website",
+    "description": "My previous Portfolio Website. Styled as an OS, it was a bit of a mess, but it was a fun project to make.",
+    "image": "/projects/oldportfolio.png"
   }
 ]

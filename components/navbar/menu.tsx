@@ -8,7 +8,6 @@ interface Props extends SVGMotionProps<SVGSVGElement> {
   strokeWidth?: string | number;
   transition?: Transition;
   lineProps?: any;
-  active?: any;
   links?: any;
 }
 
@@ -112,15 +111,20 @@ export default function MenuButton({
         {props.links.map((link: any, ind: number) => {
           return (
             <div
-              key={link.link}
-              className={` px-3 my-0.5
-           py-0.5  rounded cursor-pointer  ${
-             props.active === link.link
-               ? "bg-neutral-200 text-neutral-900"
-               : "hover:bg-neutral-800 hover:text-white"
-           }`}
+              key={link}
+              className={`px-3 my-0.5
+           py-0.5  rounded cursor-pointer 
+                hover:bg-neutral-200 hover:text-neutral-900
+                bg-neutral-800 text-white`}
+              onClick={() => {
+                const element = document.getElementById(link);
+                element?.scrollIntoView({
+                  behavior: "smooth",
+                  block:"nearest",
+                })
+              }}
             >
-              <Link href={link.link}>{link.name}</Link>
+              <button>{link}</button>
             </div>
           );
         })}
