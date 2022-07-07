@@ -158,7 +158,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                 width: "100%",
                 height: "100%",
               }}
-            >Click on Projects to swipe</motion.p>
+            >Swipe to view projects</motion.p>
             <motion.div
               className="w-full absolute bg-red-500 z-0"></motion.div>
             <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">

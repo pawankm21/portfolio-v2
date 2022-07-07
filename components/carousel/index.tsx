@@ -15,18 +15,29 @@ export default function Carousel(props: any) {
                 left: `${(i) * 40 - 15}vw`,
 
             }}
-            whileHover={{
-                rotate: i === 0 ? 0 : i === 1 ? -10 : 10,
+            drag="x"
+            dragConstraints={{
+                left: 0,
+                right: 0,
             }}
+            onDrag={(e: any, info: any) => {
+                if (i === 0) {
+                    if (info.offset.x > 100) {
+                        setPosition((position - 1 + i) % data.length);
+                    } else if (info.offset.x < -100) {
+                        setPosition((i + position + 1 + data.length) % data.length);
+                    }
+                }
+
+            }}
+            dragSnapToOrigin={true}
+            dragElastic={0.3}
             initial={{
                 scale: 0,
             }}
 
             className="lg:w-[30vw] w-[40vw] bg-black overflow-hidden absolute  hover:shadow hover:shadow-red-500 shadow-lg rounded-lg top-2 min-h-fit " id="container">
-            <Card onClick={() => {
-                if (i === 0) return;
-                setPosition((i + position + data.length) % data.length);
-            }}{...data[(i + position + data.length) % data.length]} />
+            <Card {...data[(i + position + data.length) % data.length]} />
         </motion.div>
         )))}
 
