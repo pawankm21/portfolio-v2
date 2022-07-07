@@ -48,7 +48,7 @@ export default function Projects() {
                                 </a>
                             </Link> : null}
                         </div>
-                        <div className="flex gap-4 flex-auto my-6">
+                        <div className="flex gap-4 flex-wrap my-6">
                             {project.tags.map((tag: string) => (
                                 <div key={tag} className="bg-neutral-700 text-red-500 p-2 rounded-full">{tag}</div>
                             ))}
