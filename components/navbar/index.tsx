@@ -21,9 +21,12 @@ export default function Navbar() {
       animate="animate"
       className=" w-full  bg-neutral-900   sticky top-0 z-50 shadow shadow-gray-700 flex px-16 py-4 justify-between  place-items-end "
     >
+      <Link href="/">
+
       <h1 className="text-xl font-bold text-white">
         Pawan <span className="text-red-600 font-bold text-4xl">.</span>{" "}
       </h1>
+      </Link>
 
       <div className="lg:flex gap-12 w-1/3 mt-2 ml-24  justify-center place-content-end  hidden ">
         <Link href="https://linkedin.com/in/pawan-kumar-mishra/">
