@@ -61,7 +61,7 @@
   {
     "name": "Old Portfolio Website",
     "description": "My previous Portfolio Website.",
-    "long_description": "This is the website that I used to host my portfolio. Styled as an OS, it is a bit of a mess and un-responsive, but it was a fun project to work on. I hope you enjoy it!",
+    "long_description": "This is the website that I used to host as my portfolio. Styled as an OS, it is a bit of a mess and unresponsive, but it was my first portfolio and fun project to work on. I hope you enjoy it!",
     "image": "/projects/oldportfolio.png",
     "link": "/projects/6",
     "github": "https://github.com/pawankm21/personal-website",
