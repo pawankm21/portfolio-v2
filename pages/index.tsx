@@ -74,7 +74,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                 <h1 className="text-white text-lg font-bold"> Hi!</h1>
                 <p className="text-neutral-300">
                   I am a <span className="font-semibold text-red-300">Web Developer </span> from India.
-                  I have been learning  and working with the <span className="font-semibold text-red-300">React&rsquo; s ecosystem</span> since the past 2 years. I like to code things that are <span className="font-semibold text-red-300">user-friendly</span> and <span className="font-semibold text-red-300">
+                  I have been learning  and working with the <span className="font-semibold text-red-300">React&rsquo; s ecosystem</span> since 2 years. I like to code things that are <span className="font-semibold text-red-300">user-friendly</span> and <span className="font-semibold text-red-300">
                     {" "}
                     responsive
                   </span>
