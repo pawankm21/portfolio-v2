@@ -22,9 +22,9 @@ export default function Carousel(props: any) {
             }}
             onDrag={(e: any, info: any) => {
                 if (i === 0) {
-                    if (info.offset.x > 100) {
+                    if (info.offset.x > 40) {
                         setPosition((position - 1 + i) % data.length);
-                    } else if (info.offset.x < -100) {
+                    } else if (info.offset.x < -40) {
                         setPosition((i + position + 1 + data.length) % data.length);
                     }
                 }
