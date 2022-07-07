@@ -141,9 +141,28 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
 
             <h1 className="text-5xl font-bold px-8 ">Projects</h1>
+            <motion.p
+              
+              className="px-8 text-xs mt-4"
+              whileInView={{
+                opacity: 0,
+                margin: 0,
+                height: 0,
+                transition: {
+                  delay: 2,
+                  duration:1,
+                }
+              }}
+              initial={{
+                opacity: 1,
+                width: "100%",
+                height: "100%",
+              }}
+            >Click on Projects to swipe</motion.p>
             <motion.div
               className="w-full absolute bg-red-500 z-0"></motion.div>
             <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
+              
               <Carousel data={projects} />
             </div>
 
