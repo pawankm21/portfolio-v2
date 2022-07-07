@@ -7,14 +7,11 @@ import { delay, section } from "../utils/utils";
 import Card from "../components/carousel/card";
 import CircleAnimation from "../components/animations/circle-animation";
 import Skill from "../components/skills";
-import skills from "../data/skills.json";
-import projects from "../data/projects.json";
-import blogs from "../data/blogs.json";
 import { useRef } from 'react';
 import Carousel from '../components/carousel';
 import Link from "next/link";
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ blogs, projects, skills }: any) => {
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const handleScroll = (ref: any) => {
@@ -74,19 +71,35 @@ const Home: NextPage = () => {
 
               <div className="lg:hidden"></div>
               <div className="lg:w-1/2 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptates, maiores officiis magni ea voluptate nisi obcaecati sint hic cum! Optio ab exercitationem officia libero sint aut, laudantium quas ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, obcaecati nihil minima libero possimus nemo earum cumque eveniet sapiente maxime ipsam ullam velit placeat sit. Aspernatur quis ipsam enim corporis?
+                <h1 className="text-white text-lg font-bold"> Hi!</h1>
+                <p className="text-neutral-300">
+                  I am a <span className="font-semibold text-red-300">Web Developer </span> from India.
+                  I have been learning  and working with the <span className="font-semibold text-red-300">React&rsquo; s ecosystem</span> since the past 2 years. I like to code things that are <span className="font-semibold text-red-300">user-friendly</span> and <span className="font-semibold text-red-300">
+                    {" "}
+                    responsive
+                  </span>
+                  . I also have passion for
+                  <span className="font-semibold text-red-300"> 3D web development </span>
+                  and
+                  <span className="font-semibold text-red-300">
+                    {" "} Decentralized Applications (DApps)
+                  </span>
+                  , and I am currently exploring them.
+                </p>
+                <p className="text-neutral-300 my-1">
+                  This is my website where I share my projects, blogs and other stuff.
+                  <span className="font-semibold text-red-300"> Hope you like it 😀!</span>
+                </p>
+
               </div>
               <div className="lg:w-1/2 lg:block hidden">
-                <div className=" flex justify-center -z-10 h-full relative">
+                <div className=" flex justify-center align-top -z-10 h-full relative">
                   <CircleAnimation />
                   <div className="absolute">
 
-                    <Image src="/assets/me.png" width="280"
-                      style={{
-                        borderRadius: "100%",
-                      }}
+                    <Image src="/assets/me.png" width="250"
                       layout="fixed"
-                      objectFit="cover" height="200" alt="Me" />
+                      objectFit="cover" height="250" alt="Me" />
                   </div>
                 </div>
               </div>
@@ -155,7 +168,7 @@ const Home: NextPage = () => {
               {blogs.map((blog: any) => (
                 <div key={blog.name} className="hover:shadow hover:shadow-red-500 shadow-lg p-2 bg-black rounded-lg">
                   <Card  {...blog} />
-       
+
                 </div>
               ))}
             </div>
@@ -170,3 +183,16 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const blogs = await require(`../data/blogs.json`)
+  const projects = await require(`../data/projects.json`)
+  const skills = await require(`../data/skills.json`)
+  return {
+    props: {
+      blogs,
+      projects,
+      skills
+    }
+  }
+}

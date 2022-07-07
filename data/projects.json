@@ -1,32 +1,71 @@
 [
   {
     "name": "Collegium",
-    "description": "An event reminder dashboard application for college events. Users can register, view, create events.",
-    "image": "/projects/collegium1.png"
+    "description": "An event reminder dashboard application for college events. ",
+    "long_description": "An application that allows users to create,view and register into events.Event creation form is markdown supported, users can view the upcoming events as well as the events that they have registered into. The application is designed to be used by college students and faculty.",
+    "image": "/projects/collegium1.png",
+    "link": "/projects/1",
+    "github": "https://github.com/pawankm21/collegium",
+    "demo": "https://peaceful-goldberg-fd87d3.netlify.app",
+    "tags": [
+      "React",
+      "Node",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Axios",
+      "Tailwindcss"
+    ],
+    "snaps": ["/projects/collegium2.png", "/projects/collegium3.png"]
   },
   {
     "name": "IIIT-Bh Placement Website",
     "description": "Official website for IIIT-Bh Placement Cell.",
-    "image": "/projects/placement-website.jpg"
+    "long_description": "This website is designed to provide students with information about the placement process at IIIT-Bh. This website parses data from excel sheets and provides students with a better visualization of the data.",
+    "image": "/projects/placement-website.jpg",
+    "link": "/projects/2",
+    "github": "https://github.com/pawankm21/iiit-placement-website-v2",
+    "demo": "https://placement.iiit-bh.ac.in/placements/",
+    "tags": ["Nextjs", "Bootstrap", "Chartjs"]
   },
   {
     "name": "Antinormie Discord Bot",
-    "description": "A Discord bot for the Antinormie Discord server. Can give random Leetcode questions, provide upcoming contest information, create problem rooms in binarysearch.com and more.",
-    "image": "/projects/antinormie.png"
+    "description": "A Discord bot for the Antinormie Discord server.",
+    "long_description": "This bot is designed to provide upcoming competitive coding contests on Codeforces and Codechef. It can generate random leetcode problems, create coding rooms on binarysearch.com, tell jokes, and tell random funny dialogues.",
+    "image": "/projects/antinormie.png",
+    "link": "/projects/3",
+    "github": "https://github.com/pawankm21/discord-bot",
+    "tags": ["Discord.py", "Selenium", "Flask", "BeautifulSoup"]
   },
   {
     "name": "SpaceBar",
-    "description": "Oh no! Pacman has attacked! As the ships Captain, you must stop Pacman's beam of words from destroying your ship by your typing skills. Let's see how fast you can roll those fingers!",
-    "image": "/projects/spacebar.jpg"
+    "description": "A typing game for the web.",
+    "long_description": "Oh no! Pacman has attacked! As the ships Captain, you must stop Pacman's beam of words from destroying your ship by your typing skills. Let's see how fast you can roll those fingers!",
+    "image": "/projects/spacebar.jpg",
+    "link": "/projects/4",
+    "github": "https://github.com/pawankm21/space-bar",
+    "demo": "https://typing-muggle.vercel.app/",
+    "tags": ["React", "Typescript", "Framer-motion", "Tailwind css"]
   },
   {
     "name": "Social Media UI",
     "description": "A social media UI for the user to interact with the social media platform.",
-    "image": "/projects/social.png"
+    "long_description": "This is a blockchain based social media UI, made as a hackathon submission.",
+    "image": "/projects/social.png",
+    "link": "/projects/5",
+    "github": "https://github.com/pawankm21/social-media-UI",
+    "demo": "https://blockmediaui.netlify.app/",
+    "tags": ["React", "Tailwindcss"]
   },
   {
     "name": "Old Portfolio Website",
-    "description": "My previous Portfolio Website. Styled as an OS, it was a bit of a mess, but it was a fun project to make.",
-    "image": "/projects/oldportfolio.png"
+    "description": "My previous Portfolio Website.",
+    "long_description": "This is the website that I used to host my portfolio. Styled as an OS, it is a bit of a mess and un-responsive, but it was a fun project to work on. I hope you enjoy it!",
+    "image": "/projects/oldportfolio.png",
+    "link": "/projects/6",
+    "github": "https://github.com/pawankm21/personal-website",
+    "demo": "https://pawankm21.github.io/personal-website/",
+    "tags": ["React"]
   }
 ]

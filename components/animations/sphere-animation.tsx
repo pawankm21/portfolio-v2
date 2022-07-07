@@ -36,7 +36,6 @@ import { motion } from "framer-motion-3d";
 
       >
 
-        <motion.perspectiveCamera aspect={1} position={[0, 0, 10]} />
         <motion.pointLight
           position={[20, -10, 10]}
           color={0xEF4444}

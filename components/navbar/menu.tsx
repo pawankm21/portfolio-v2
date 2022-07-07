@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, Transition, SVGMotionProps } from "framer-motion";
 import Link from "next/link";
-import { linkSync } from "fs";
+import { useRouter } from "next/router";
 interface Props extends SVGMotionProps<SVGSVGElement> {
   isOpen?: boolean;
   color?: string;
@@ -20,7 +20,8 @@ export default function MenuButton({
   ...props
 }: Props) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const router = useRouter();
+  const { pathname } = router;
   const variant = isOpen ? "opened" : "closed";
   const top = {
     closed: {
@@ -73,6 +74,7 @@ export default function MenuButton({
         onClick={() => {
           setIsOpen(!isOpen);
         }}
+        className="lg:hidden"
       >
         <motion.line
           x1="0"
@@ -108,7 +110,7 @@ export default function MenuButton({
         }}
         className={`absolute bg-black rounded  text-gray-300 text-sm border border-neutral-700 -left-16  overflow-hidden grid gap-2`}
       >
-        {props.links.map((link: any, ind: number) => {
+        {pathname === "/" ? props.links.map((link: any, ind: number) => {
           return (
             <div
               key={link}
@@ -120,14 +122,19 @@ export default function MenuButton({
                 const element = document.getElementById(link);
                 element?.scrollIntoView({
                   behavior: "smooth",
-                  block:"nearest",
+                  block: "nearest",
                 })
               }}
             >
               <button>{link}</button>
             </div>
           );
-        })}
+        }) : <Link href="/">
+          <a className={`px-3 my-0.5
+           py-0.5  rounded cursor-pointer 
+                hover:bg-neutral-200 hover:text-neutral-900
+                bg-neutral-800 text-white`}>Home</a>
+        </Link>}
       </motion.div>
     </div>
   );

@@ -4,13 +4,11 @@ import LinkedinIcon from "../icons/linkedin-icon";
 import GithubIcon from "../icons/github-icon";
 import LeetcodeIcon from "../icons/leetcode-icon";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { delay } from "../../utils/utils";
 import Tabs from "../tabs";
 export default function Navbar() {
 
-  const links = [
+  const homeLinks = [
     "about",
     "projects",
     "blogs",
@@ -28,16 +26,29 @@ export default function Navbar() {
       </h1>
 
       <div className="lg:flex gap-12 w-1/3 mt-2 ml-24  justify-center place-content-end  hidden ">
-        <LinkedinIcon className="w-6 text-red-500 h-6" />
-        <GithubIcon className="w-6 text-red-500 h-6" />
-        <LeetcodeIcon className="w-6 text-red-500 h-6" />
+        <Link href="https://linkedin.com/in/pawan-kumar-mishra/">
+          <a>
+            <LinkedinIcon className="w-6 text-red-500 h-6" />
+          </a>
+        </Link>
+        <Link href="https://github.com/pawankm21/">
+          <a>
+            <GithubIcon className="w-6 text-red-500 h-6" />
+          </a>
+        </Link>
+        <Link href="https://leetcode.com/castrocee/">
+          <a>
+            <LeetcodeIcon className="w-6 text-red-500 h-6" />
+          </a>
+        </Link>
       </div>
 
+
       <motion.div className="lg:flex gap-3 justify-self-end hidden  font-bold ">
-        <Tabs links={links}  />
+        <Tabs links={homeLinks} />
       </motion.div>
 
-      <MenuButton links={links} />
+      <MenuButton links={homeLinks} />
     </motion.div>
   );
 }
