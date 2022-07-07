@@ -28,7 +28,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
         <motion.div
           className="text-white px-12 py-8 absolute text-center flex justify-center w-full top-36" id="intro">
           <div>
-            <p className="lg:text-left lg:text-red-400 font-bold "> Hi, my name is</p>
+            <p className="lg:text-left lg:text-red-400 font-bold ml-1"> Hi, my name is</p>
             <h1 className="text-8xl font-extrabold">Pawan Mishra.</h1>
             <p className="font-bold p-2 ">I am a Web developer.</p>
           </div>
@@ -143,7 +143,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             <h1 className="text-5xl font-bold px-8 ">Projects</h1>
             <motion.div
               className="w-full absolute bg-red-500 z-0"></motion.div>
-            <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[50vh] overflow-hidden flex justify-center  mx-auto relative">
+            <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
               <Carousel data={projects} />
             </div>
 

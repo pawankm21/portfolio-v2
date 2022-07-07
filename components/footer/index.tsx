@@ -16,7 +16,7 @@ export default function Footer() {
       id="contact"
     >
       <div className="w-full absolute bg-neutral-900 bottom-0">
-        <Image src="/assets/divider.png" width="1920" height="600" objectFit="cover" alt="footer" objectPosition={"end"} />
+        <Image src="/assets/divider.png" width="1920" height="800" objectFit="cover" alt="footer" objectPosition={"end"} />
       </div>
       <motion.div
 
