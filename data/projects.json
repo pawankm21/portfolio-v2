@@ -71,7 +71,7 @@
   {
     "name":"Customer Management System",
     "description":"A CMS cum E-commerce website.",
-    "long_description":"This is a CMS cum E-commerce website. It is a django application that allows the user to manage their account, track their orders, view and ordertproducts from the store. I implemented role based access control, user authentication and user management.",
+    "long_description":"This is a CMS cum E-commerce website. It is a django application that allows the user to manage their account, track their orders, view and order products from the store. I implemented role based access control, user authentication and user management.",
     "image":"/projects/cms1.png",
     "link":"/projects/7",
     "github":"https://github.com/pawankm21/customer-management-system",
