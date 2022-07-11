@@ -79,7 +79,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                     responsive
                   </span>
                   . I also have passion for
-                  <span className="font-semibold text-red-300"> 3D web development </span>
+                  <span className="font-semibold text-red-300"> Native app development </span>
                   and
                   <span className="font-semibold text-red-300">
                     {" "} Decentralized Applications (DApps)
