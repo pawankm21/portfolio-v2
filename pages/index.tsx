@@ -25,7 +25,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
       className="w-full min-h-[100vh]"
     >
       <section className="w-full h-[100vh]">
-        <motion.div
+        <motion.div layout
           className="text-white px-12 py-8 absolute text-center flex justify-center w-full top-36" id="intro">
           <div>
             <p className="lg:text-left lg:text-red-400 font-bold ml-1"> Hi, my name is</p>
@@ -65,12 +65,12 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200  bg-neutral-800">
 
-            <h1 className="text-5xl font-bold px-8">About me</h1>
+            <motion.h1 layout className="text-5xl font-bold px-8">About me</motion.h1>
 
-            <div className="lg:flex p-4 mt-5">
+            <motion.div layout className="lg:flex p-4 mt-5">
 
-              <div className="lg:hidden"></div>
-              <div className="lg:w-1/2 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300">
+              <motion.div layout className="lg:hidden"></motion.div>
+              <motion.div layout className="lg:w-1/2 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300">
                 <h1 className="text-white text-lg font-bold"> Hi!</h1>
                 <p className="text-neutral-300">
                   I am a <span className="font-semibold text-red-300">Web Developer </span> from India.
@@ -91,8 +91,8 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                   <span className="font-semibold text-red-300"> Hope you like it 😀!</span>
                 </p>
 
-              </div>
-              <div className="lg:w-1/2 lg:block hidden">
+              </motion.div>
+              <motion.div layout className="lg:w-1/2 lg:block hidden">
                 <div className=" flex justify-center align-top -z-10 h-full relative">
                   <CircleAnimation />
                   <div className="absolute">
@@ -102,8 +102,8 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                       objectFit="cover" height="250" alt="Me" />
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
 
           </motion.div>
@@ -119,14 +119,14 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
 
-            <h1 className="text-5xl font-bold px-8">Skills</h1>
-            <div className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
+            <motion.h1 layout className="text-5xl font-bold px-8">Skills</motion.h1>
+            <motion.div layout className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
               place-items-center ">
               {skills.map((skill: any) => {
                 return <Skill key={skill.name} {...skill} />
               })}
 
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -140,9 +140,9 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
 
-            <h1 className="text-5xl font-bold px-8 ">Projects</h1>
+            <motion.h1 layout className="text-5xl font-bold px-8 ">Projects</motion.h1>
             <motion.p
-              
+              layout
               className="px-8 text-xs mt-4"
               whileInView={{
                 opacity: 0,
@@ -150,7 +150,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                 height: 0,
                 transition: {
                   delay: 2,
-                  duration:1,
+                  duration: 1,
                 }
               }}
               initial={{
@@ -160,9 +160,10 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               }}
             >Swipe to view projects</motion.p>
             <motion.div
+              layout
               className="w-full absolute bg-red-500 z-0"></motion.div>
             <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
-              
+
               <Carousel data={projects} />
             </div>
 
@@ -180,15 +181,15 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
 
-            <h1 className="text-5xl font-bold px-8 ">Blogs</h1>
-            <motion.div
+            <motion.h1 layout className="text-5xl font-bold px-8 ">Blogs</motion.h1>
+            <motion.div layout
               className="w-full absolute bg-red-500 z-0"></motion.div>
             <div className="m-6 p-10 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow transition duration-300 relative grid gap-4 lg:grid-cols-2">
               {blogs.map((blog: any) => (
-                <div key={blog.name} className="hover:shadow hover:shadow-red-500 shadow-lg p-2 bg-black rounded-lg">
+                <motion.div layout key={blog.name} className="hover:shadow hover:shadow-red-500 shadow-lg p-2 bg-black rounded-lg">
                   <Card  {...blog} />
 
-                </div>
+                </motion.div>
               ))}
             </div>
 
