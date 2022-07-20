@@ -23,6 +23,17 @@ export default function Projects() {
                         <Image src={project.image} width={1008} height={300} alt={project.name} objectFit="cover" style={{
                             borderRadius: "1rem",
                         }} />
+                        {project.video ? <div className="">
+                            <iframe
+                                width="853"
+                                height="480"
+                                src={`https://www.youtube.com/embed/${project.video}`}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                title="Embedded youtube"
+                            />
+                        </div> : null}
                         <div className="grid grid-cols-2 gap-2 mt-6">
                             {project.snaps ? project.snaps!.map((snap: any) => (<Image objectFit="cover"
                                 key={snap} src={snap} width={500} height={200} objectPosition={"top"} alt={snap} />)) : null}
@@ -47,6 +58,7 @@ export default function Projects() {
 
                                 </a>
                             </Link> : null}
+                            
                         </div>
                         <div className="flex gap-4 flex-wrap my-6">
                             {project.tags.map((tag: string) => (

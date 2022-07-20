@@ -77,5 +77,13 @@
     "github":"https://github.com/pawankm21/customer-management-system",
     "tags":["Django","PostgreSQL","Material-Bootstrap"],
     "snaps":["/projects/cms2.png","/projects/cms3.png"]
+  },{
+    "name":"Animations using Framer-motion",
+    "description":"A website that uses framer-motion to animate the elements.( Not responsive yet )",
+    "long_description":"Tried to replicate a mockup of a website from Dribbble using framer-motion. The website is not responsive yet, but it is a fun project to work on.",
+    "video":"3PTFBJ659EQ",
+    "github":"https://github.com/pawankm21/fashion-e-commerce",
+    "demo":"http://fashion-e-commerce.vercel.app/",
+    "tags":["Nextjs, Framer-motion, Tailwindcss"]
   }
 ]
