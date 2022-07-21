@@ -20,29 +20,14 @@ export default function Carousel(props: any) {
                 left: 0,
                 right: 0,
             }}
-            onDrag={(e: any, info: any) => {
-                if (i === 0) {
-                    if (info.offset.x > 40) {
-                        setPosition((position - 1 + i) % data.length);
-                    } else if (info.offset.x < -40) {
-                        setPosition((i + position + 1 + data.length) % data.length);
-                    }
+            onDrag={ i=== 0 ? (e: any, info: any) => {
+                if (info.offset.x > 40) {
+                    setPosition((i + position - 1 + data.length) % data.length);
+                } else if (info.offset.x < -40) {
+                    setPosition((i + position + 1) % data.length);
                 }
-                else if (i === 1) {
-                    if (info.offset.x > 40) {
-                        setPosition((position - 1) % data.length);
-                    } else if (info.offset.x < -40) {
-                        setPosition((position + 1 + data.length) % data.length);
-                    }
-                }
-                else if (i === -1) {
-                    if (info.offset.x > 40) {
-                        setPosition((position - 1 + data.length) % data.length);
-                    } else if (info.offset.x < -40) {
-                        setPosition((position + 1) % data.length);
-                    }
-                }
-            }}
+
+            } : undefined}
             dragSnapToOrigin={true}
             dragElastic={0.3}
             initial={{
