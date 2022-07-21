@@ -20,13 +20,13 @@ export default function Projects() {
                 <div className="w-full min-h-[100vh] relative z-10 p-10 lg:px-32">
                     <h1 className="lg:text-6xl text-3xl font-bold text-neutral-100">{project.name}</h1>
                     <div className=" mt-10 grid place-items-center">
-                        <Image src={project.image} width={1008} height={300} alt={project.name} objectFit="cover" style={{
+                        <Image src={project.image} width={1920} height={1080} alt={project.name} objectFit="cover" style={{
                             borderRadius: "1rem",
                         }} />
-                        {project.video ? <div className="">
+                        {project.video ? <div className="w-full h-[30vh]">
                             <iframe
-                                width="853"
-                                height="480"
+                                
+                                className="w-full h-full rounded-2xl mt-4 lg:mt-8 "
                                 src={`https://www.youtube.com/embed/${project.video}`}
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
