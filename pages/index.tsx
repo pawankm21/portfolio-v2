@@ -109,8 +109,8 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
-            <motion.h1 className="text-5xl font-bold px-8">Skills</motion.h1>
-            <motion.div className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
+            <motion.h1 layout className="text-5xl font-bold px-8">Skills</motion.h1>
+            <motion.div layout className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
               place-items-center ">
               {skills.map((skill: any) => {
                 return <Skill key={skill.name} {...skill} />
@@ -130,8 +130,9 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
-            <motion.h1 className="text-5xl font-bold px-8 ">Projects</motion.h1>
+            <motion.h1 layout className="text-5xl font-bold px-8 ">Projects</motion.h1>
             <motion.p
+              layout
               className="px-8 text-xs mt-4"
               whileInView={{
                 opacity: 0,
@@ -149,11 +150,12 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               }}
             >Swipe to view projects</motion.p>
             <motion.div
+              layout
               className="w-full absolute bg-red-500 z-0"></motion.div>
-            <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
+            <motion.div layout className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
 
               <Carousel data={projects} />
-            </div>
+            </motion.div>
 
           </motion.div>
         </div>
@@ -163,22 +165,22 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
       <section className="w-full  mt-32" id="blogs">
         <div className={`relative mt-24 lg:h-[100vh]`} >
           <motion.div
-            className="w-full h-full absolute   bg-red-500 z-0"></motion.div>
+            className="w-full h-full absolute bg-red-500 z-0"></motion.div>
           <motion.div
             variants={section}
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
-            <motion.h1 className="text-5xl font-bold px-8 ">Blogs</motion.h1>
-            <motion.div
+            <motion.h1 layout className="text-5xl font-bold px-8 ">Blogs</motion.h1>
+            <motion.div layout
               className="w-full absolute bg-red-500 z-0"></motion.div>
-            <div className="m-6 p-10 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow transition duration-300 relative grid gap-4 lg:grid-cols-2">
+            <motion.div layout className="m-6 p-10 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow transition duration-300 relative grid gap-4 lg:grid-cols-2">
               {blogs.map((blog: any) => (
                 <motion.div key={blog.name} className="hover:shadow hover:shadow-red-500 shadow-lg p-2 bg-black rounded-lg">
                   <Card  {...blog} />
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
