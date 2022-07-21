@@ -23,7 +23,7 @@ export default function Navbar() {
     >
       <Link href="/">
 
-      <h1 className="text-xl font-bold text-white">
+      <h1 className="text-xl font-bold text-white cursor-pointer">
         Pawan <span className="text-red-600 font-bold text-4xl">.</span>{" "}
       </h1>
       </Link>
