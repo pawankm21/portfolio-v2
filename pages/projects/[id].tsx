@@ -20,10 +20,10 @@ export default function Projects() {
                 <div className="w-full min-h-[100vh] relative z-10 p-10 lg:px-32">
                     <h1 className="lg:text-6xl text-3xl font-bold text-neutral-100">{project.name}</h1>
                     <div className=" mt-10 grid place-items-center">
-                        <Image src={project.image} width={1920} height={1080} alt={project.name} objectFit="cover" style={{
+                        <Image src={project.image} width={1080} height={540} alt={project.name}  objectFit="cover" style={{
                             borderRadius: "1rem",
                         }} />
-                        {project.video ? <div className="w-full h-[30vh]">
+                        {project.video ? <div className="lg:w-[50vw] lg:h-[50vh] w-full h-[40vh]">
                             <iframe
                                 
                                 className="w-full h-full rounded-2xl mt-4 lg:mt-8 "

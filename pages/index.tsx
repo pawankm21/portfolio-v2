@@ -25,7 +25,6 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
     >
       <section className="w-full h-[100vh]">
         <motion.div
-
           className="text-white px-12 py-8 absolute text-center flex justify-center w-full top-36" id="intro">
           <div>
             <p className="lg:text-left lg:text-red-400 font-bold ml-1"> Hi, my name is</p>
@@ -33,6 +32,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             <p className="font-bold p-2 ">I am a Web developer.</p>
           </div>
         </motion.div>
+
         <motion.div
           className="w-full h-full" >
           <Canvas className=" mix-blend-exclusion -my-6" >
@@ -40,19 +40,15 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
           </Canvas>
         </motion.div>
 
-
         <motion.button
           whileHover={{
             translateY: -5,
             translateX: 5,
           }}
-
-
           onClick={() => handleScroll(aboutRef)}
           className="absolute text-white py-4 border bottom-6 border-neutral-400 px-6 lg:bottom-12 lg:left-6 left-4">
           Continue
         </motion.button>
-
       </section>
 
       <section className="w-full mt-32 " id="about"  >
@@ -64,12 +60,8 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200  bg-neutral-800">
-
-            <motion.h1 className="text-5xl font-bold px-8">About me</motion.h1>
-
-            <motion.div className="lg:flex p-4 mt-5">
-
-              <motion.div className="lg:hidden"></motion.div>
+            <motion.h1 layout className="text-5xl font-bold px-8">About me</motion.h1>
+            <motion.div layout className="lg:flex p-4 mt-5">
               <motion.div className="lg:w-1/2 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300">
                 <h1 className="text-white text-lg font-bold"> Hi!</h1>
                 <p className="text-neutral-300">
@@ -104,11 +96,10 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                 </div>
               </motion.div>
             </motion.div>
-
-
           </motion.div>
         </div>
       </section>
+
       <section className="w-full mt-32" ref={skillsRef} id="skills">
         <div className={`relative mt-24`} >
           <motion.div
@@ -118,7 +109,6 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
-
             <motion.h1 className="text-5xl font-bold px-8">Skills</motion.h1>
             <motion.div className="m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300 relative grid lg:grid-cols-8 sm:grid-cols-4  grid-cols-3
               place-items-center ">
@@ -130,6 +120,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
           </motion.div>
         </div>
       </section>
+
       <section className="w-full  mt-32" id="projects">
         <div className={`relative mt-24 lg:h-[100vh]`} >
           <motion.div
@@ -139,10 +130,8 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
-
             <motion.h1 className="text-5xl font-bold px-8 ">Projects</motion.h1>
             <motion.p
-
               className="px-8 text-xs mt-4"
               whileInView={{
                 opacity: 0,
@@ -160,7 +149,6 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               }}
             >Swipe to view projects</motion.p>
             <motion.div
-
               className="w-full absolute bg-red-500 z-0"></motion.div>
             <div className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
 
@@ -171,6 +159,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
         </div>
 
       </section>
+
       <section className="w-full  mt-32" id="blogs">
         <div className={`relative mt-24 lg:h-[100vh]`} >
           <motion.div
@@ -180,7 +169,6 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             whileInView="whileInView"
             initial="initial"
             className="relative z-10  shadow-2xl m-4 p-4 border border-neutral-500 rounded text-neutral-200 bg-neutral-800">
-
             <motion.h1 className="text-5xl font-bold px-8 ">Blogs</motion.h1>
             <motion.div
               className="w-full absolute bg-red-500 z-0"></motion.div>
@@ -188,15 +176,13 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               {blogs.map((blog: any) => (
                 <motion.div key={blog.name} className="hover:shadow hover:shadow-red-500 shadow-lg p-2 bg-black rounded-lg">
                   <Card  {...blog} />
-
                 </motion.div>
               ))}
             </div>
-
           </motion.div>
         </div>
-
       </section>
+
     </motion.div>
 
   );
