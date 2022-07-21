@@ -14,13 +14,14 @@ export const delay = {
 export const section = {
   initial: {
     scale: 0.9,
-    opacity: 0.5,
   },
 
   whileInView: {
     scale: 1,
     translateY: -10,
     transition: {
+      duration: 0.5,
+      ease: "easeInOut",
     }
   }
 }

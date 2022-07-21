@@ -28,7 +28,20 @@ export default function Carousel(props: any) {
                         setPosition((i + position + 1 + data.length) % data.length);
                     }
                 }
-
+                else if (i === 1) {
+                    if (info.offset.x > 40) {
+                        setPosition((position - 1) % data.length);
+                    } else if (info.offset.x < -40) {
+                        setPosition((position + 1 + data.length) % data.length);
+                    }
+                }
+                else if (i === -1) {
+                    if (info.offset.x > 40) {
+                        setPosition((position - 1 + data.length) % data.length);
+                    } else if (info.offset.x < -40) {
+                        setPosition((position + 1) % data.length);
+                    }
+                }
             }}
             dragSnapToOrigin={true}
             dragElastic={0.3}
