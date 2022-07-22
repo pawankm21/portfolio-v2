@@ -28,7 +28,17 @@
     "github": "https://github.com/pawankm21/iiit-placement-website-v2",
     "demo": "https://placement.iiit-bh.ac.in/placements/",
     "tags": ["Nextjs", "Bootstrap", "Chartjs"]
+  },{
+      "name":"Pokemon Wiki",
+    "description":"Website to search and view all Pokémons from PokeAPI",
+    "long_description":"A website where you can view and search your favourite Pokémons. The website is responsive, has dark mode and uses PokéAPI to fetch data. This is my first website using Tailwindcss, and since then, I fell in love with the framework.",
+    "image":"/projects/image_2022-07-22_130609617.png",
+    "demo":"https://p0kemon-wiki.netlify.app/",
+    "github":"https://pawankm21/pokemon-wiki",
+    "link":"/projects/9",
+    "tags":["React","Tailwindcss"]
   },
+  
   {
     "name": "Antinormie Discord Bot",
     "description": "A Discord bot for the Antinormie Discord server.",
@@ -47,7 +57,7 @@
     "github": "https://github.com/pawankm21/space-bar",
     "demo": "https://typing-muggle.vercel.app/",
     "video":"7SkN9ozUVaQ",
-    "tags": ["React", "Typescript", "Framer-motion", "Tailwind css"]
+    "tags": ["React", "Typescript", "Framer-motion", "Tailwindcss"]
   },
   {
     "name": "Social Media UI",
