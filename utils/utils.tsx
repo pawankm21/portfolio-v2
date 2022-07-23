@@ -32,3 +32,9 @@ export const item = {
     opacity: 1
   }
 };
+export const skills = {
+  translateY: -10,
+  translateX: 10,
+  translateZ: 2,
+  color: "white",
+}

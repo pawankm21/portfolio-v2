@@ -12,7 +12,7 @@ export default function Carousel(props: any) {
             key={data[(i + position + data.length) % data.length].name}
             animate={{
                 scale: i === 0 ? 1 : 0.8,
-                left: `${(i) * 40 - 15}vw`,
+                left: `${(i) * 40 - 16}vw`,
 
             }}
             drag="x"
