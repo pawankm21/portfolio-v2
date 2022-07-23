@@ -140,7 +140,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
             <motion.div
               layout
               className="w-full absolute bg-red-500 z-0"></motion.div>
-            <motion.div layout className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] md:h-[60vh] h-[50vh] overflow-hidden flex justify-center  mx-auto relative">
+            <motion.div layout className="lg:w-[90vw] m-6 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg  lg:h-[75vh] md:h-[60vh] h-[40vh] overflow-hidden flex justify-center  mx-auto relative">
 
               <Carousel data={projects} />
             </motion.div>
