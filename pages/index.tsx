@@ -29,7 +29,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
           <div>
             <p className="lg:text-left lg:text-red-400 font-bold ml-1"> Hi, my name is</p>
             <h1 className="text-8xl font-extrabold">Pawan Mishra.</h1>
-            <p className="font-bold p-2 ">I am a Web developer.</p>
+            <p className="font-bold p-2 ">I am a Software Engineer.</p>
           </div>
         </motion.div>
 
@@ -65,12 +65,12 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               <motion.div className="lg:w-1/2 p-4 bg-neutral-900 rounded border border-neutral-500 shadow-red-400 shadow-lg hover:shadow hover:shadow-red-500 transition duration-300">
                 <h1 className="text-white text-lg font-bold"> Hi!</h1>
                 <p className="text-neutral-300">
-                  I am a <span className="font-semibold text-red-300">Web Developer </span> from India.
+                  I am a <span className="font-semibold text-red-300">Software Engineer </span> from India.
                   I have been learning  and working with the <span className="font-semibold text-red-300">React&rsquo; s ecosystem</span> since 2 years. I like to code things that are <span className="font-semibold text-red-300">user-friendly</span> and <span className="font-semibold text-red-300">
                     {" "}
                     responsive
                   </span>
-                  . I also have passion for
+                  . I am also interested in
                   <span className="font-semibold text-red-300"> Native app development </span>
                   and
                   <span className="font-semibold text-red-300">
