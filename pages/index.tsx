@@ -70,14 +70,6 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                     {" "}
                     responsive
                   </span>
-                  . I am also interested in
-                  <span className="font-semibold text-red-300"> Native app development </span>
-                  and
-                  <span className="font-semibold text-red-300">
-                    {" "} Decentralized Applications (DApps)
-                  </span>
-                  , and I am currently exploring them.
-                </p>
                 <p className="text-neutral-300 my-1">
                   This is my website where I share my projects, blogs and other stuff.
                   <span className="font-semibold text-red-300"> Hope you like it 😀!</span>
@@ -87,10 +79,9 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               <motion.div className="lg:w-1/2 lg:block hidden">
                 <div className=" flex justify-center align-top -z-10 h-full relative">
                   <CircleAnimation />
-                  <div className="absolute">
+                  <div className="relative">
 
                     <Image src="/assets/me.png" width="250"
-                      layout="fixed"
                       objectFit="cover" height="250" alt="Me" />
                   </div>
                 </div>
