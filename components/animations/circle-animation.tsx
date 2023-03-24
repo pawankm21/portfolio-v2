@@ -34,7 +34,7 @@ export default function CircleAnimation() {
     }
     return (
         <motion.div
-            className="w-full h-full flex justify-center relative filter blur-2xl">
+            className="w-full h-full flex justify-center relative filter blur-xl">
 
             <motion.div variants={circleVariant} initial="initial" animate="animate1" className="opacity-75  bg-red-400 absolute rounded-full  mix-blend-multiply "></motion.div> <motion.div initial="initial" variants={circleVariant} animate="animate2" className=" bg-blue-400 absolute rounded-full mix-blend-multiply  opacity-50 "></motion.div>
 
