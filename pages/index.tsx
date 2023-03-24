@@ -80,7 +80,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
               <motion.div className="lg:w-1/2 lg:block hidden">
                 <div className=" flex justify-center align-top -z-10 h-full relative">
                   <CircleAnimation />
-                    <img src="/assets/me.png" width="250" className=" object-cover self-center align-self-center justify-self-center" alt="Me" />
+                    <img src="/assets/me.png" width="250" className=" object-cover self-center align-self-center justify-self-center absolute left-0" alt="Me" />
                 </div>
               </motion.div>
             </motion.div>
