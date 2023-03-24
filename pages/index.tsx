@@ -70,6 +70,7 @@ const Home: NextPage = ({ blogs, projects, skills }: any) => {
                     {" "}
                     responsive
                   </span>
+                </p>
                 <p className="text-neutral-300 my-1">
                   This is my website where I share my projects, blogs and other stuff.
                   <span className="font-semibold text-red-300"> Hope you like it 😀!</span>
